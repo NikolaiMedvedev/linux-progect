@@ -1,5 +1,5 @@
 # linux-project PSU
 # Nikolai Medvedev 
 # Dmitriy Kleshnin
-# Aleksand Shchipitsin
+# Aleksandr Shchipitsin
 # Aleksandr Chepovetskiy
