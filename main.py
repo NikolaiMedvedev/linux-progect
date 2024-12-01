@@ -31,3 +31,28 @@ def check_winner(board):
         return board[0][2]
 
     return None
+
+def is_board_full(board):
+    return all(cell != " " for row in board for cell in row)
+
+
+def main():
+    board = [[" " for _ in range(3)] for _ in range(3)]
+    current_player = "X"
+
+    while True:
+        print_board(board)
+        print(f"Игрок {current_player}, введите номер клетки (1-9): ")
+
+        try:
+            cell = int(input())
+
+            if cell < 1 or cell > 9:
+                print("Неверный номер клетки. Попробуйте еще раз.")
+                continue
+
+            row, col = divmod(cell - 1, 3)
+
+            if board[row][col] != " ":
+                print("Эта клетка уже занята. Попробуйте другую.")
+                continue
