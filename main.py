@@ -56,3 +56,25 @@ def main():
             if board[row][col] != " ":
                 print("Эта клетка уже занята. Попробуйте другую.")
                 continue
+
+            board[row][col] = current_player
+
+            winner = check_winner(board)
+            if winner:
+                print_board(board)
+                print(f"Игрок {winner} победил!")
+                break
+
+            if is_board_full(board):
+                print_board(board)
+                print("Игра завершилась вничью!")
+                break
+
+            current_player = "O" if current_player == "X" else "X"
+
+        except ValueError:
+            print("Пожалуйста, введите число от 1 до 9.")
+
+
+if __name__ == "__main__":
+    main()
